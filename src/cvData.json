@@ -1,0 +1,33 @@
+{
+    "personalInformation": {
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "phone": "+1234567890",
+      "address": "123 Main St, City"
+    },
+    "education": [
+      {
+        "degree": "Bachelor of Science",
+        "school": "University A",
+        "year": "2016"
+      },
+      {
+        "degree": "Master of Science",
+        "school": "University B",
+        "year": "2018"
+      }
+    ],
+    "experience": [
+      {
+        "position": "Software Developer",
+        "company": "Company X",
+        "year": "2018-2020"
+      },
+      {
+        "position": "Frontend Developer",
+        "company": "Company Y",
+        "year": "2020-present"
+      }
+    ]
+  }
+  

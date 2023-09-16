@@ -36,3 +36,39 @@
     transform: rotate(360deg);
   }
 }
+
+.falling-leaves {
+  /* Define the styles for the container div */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Allows interaction with elements behind it */
+
+  /* You can add additional styles to customize the container */
+}
+
+/* Define the styles for the falling leaves */
+.falling-leaf {
+  /* Set the leaf image as the background */
+  background-image: url('./Components/leaf.png');
+  background-size: contain;
+  position: absolute;
+  width: 20px; /* Adjust the size of the leaf */
+  height: 20px; /* Adjust the size of the leaf */
+  animation: falling 5s linear infinite; /* Adjust animation properties as needed */
+}
+
+/* Define the keyframes animation for falling leaves */
+@keyframes falling {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+

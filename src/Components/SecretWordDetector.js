@@ -1,40 +1,39 @@
-import React, { Component } from 'react';
-import FallingLeaves from './FallingLeaves'; // Import the FallingLeaves component
+import React, { useEffect, useState } from 'react';
 
-class SecretWordDetector extends Component {
-  // Define your secret word
-  secretWord = "fall";
+function App() {
+  const [keysPressed, setKeysPressed] = useState('');
 
-  // State to control the visibility of FallingLeaves
-  state = {
-    secretWordTyped: false,
-  };
-
-  // Handle key press event
-  handleKeyPress = (event) => {
-    const key = event.key.toLowerCase(); // Convert to lowercase for case-insensitive comparison
-
-    // Check if the secret word is typed
-    if (key === this.secretWord) {
-      this.setState({ secretWordTyped: true });
+  useEffect(() => {
+    function handleKeyDown(e) {
+      setKeysPressed((keys) => keys + e.key);
     }
-  };
 
-  componentDidMount() {
-    document.addEventListener("keydown", this.handleKeyPress);
-  }
+    document.addEventListener('keydown', handleKeyDown);
 
-  componentWillUnmount() {
-    document.removeEventListener("keydown", this.handleKeyPress);
-  }
+    // Cleanup function to remove event listener
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
-  render() {
-    return (
-      <>
-        {this.state.secretWordTyped && <FallingLeaves />}
-      </>
-    );
-  }
+  useEffect(() => {
+    if (keysPressed.includes('red')) {
+      document.body.style.backgroundColor = 'red';
+      document.body.style.color = 'blue';
+      setKeysPressed('');
+    }
+  }, [keysPressed]);
+  useEffect(() => {
+    if (keysPressed.includes('blue')) {
+      document.body.style.backgroundColor = 'blue';
+      document.body.style.color = 'red';
+      setKeysPressed('');
+    }
+  }, [keysPressed]);
+
+  return (
+    <div />
+  );
 }
 
-export default SecretWordDetector;
+export default App;

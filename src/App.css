@@ -1,74 +1,35 @@
 .App {
-  text-align: left;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column; /* Display items as rows */
+  align-items: left;
+  margin-left: 40px;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  margin: 20px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Style section titles (e.g., "Education" and "Work experience") */
+.section-title {
+  align-items: left;
+
+  font-size: 1.2rem;
+  margin: 20px 0;
 }
 
-.falling-leaves {
-  /* Define the styles for the container div */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* Allows interaction with elements behind it */
 
-  /* You can add additional styles to customize the container */
+section {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px; /* Add spacing between sections */
+}
+article {
+  opacity: 0.96;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Define the styles for the falling leaves */
-.falling-leaf {
-  /* Set the leaf image as the background */
-  background-image: url('./Components/leaf.png');
-  background-size: contain;
-  position: absolute;
-  width: 20px; /* Adjust the size of the leaf */
-  height: 20px; /* Adjust the size of the leaf */
-  animation: falling 5s linear infinite; /* Adjust animation properties as needed */
-}
-
-/* Define the keyframes animation for falling leaves */
-@keyframes falling {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100vh);
-    opacity: 0;
-  }
-}
-
+/* Style article content as needed */

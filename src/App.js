@@ -1,29 +1,31 @@
 import cvData from "./cvData.json";
 import PersonalInfo from "./Components/CV/PersonalInfo";
-import SecretWordDetector from "./Components/CV/SecretWordDetector";
+import SecretWordDetector from "./Components/SecretWordDetector";
 import './App.css';
 
 export default function App() {
-  handleClick() {
-    alert('Why would you do that?', this)
-    return; // Add this line to fix the error
-  };
+  
+  function handleClick() {
+    alert('Why would you do that?');
+    return;
+  }
+
 
   return (
     <div className="App">
       <h1>Robin react cv</h1>
       <SecretWordDetector />
 
-      <button onClick={() => this.handleClick()}>
-        Don't click me
-      </button>
+        
 
 
       <h1 className="section-title">Contact Info</h1>
       <section>
+      <button onClick={handleClick}>
         <article>
           <PersonalInfo data={cvData.personalInformation} />
         </article>
+      </button>
       </section>
 
       <h1 className="section-title">Education</h1>
@@ -49,7 +51,6 @@ export default function App() {
           </article>
         ))}
       </section>
-
     </div>
   );
 }
